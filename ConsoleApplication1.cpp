@@ -3,36 +3,19 @@
 
 using namespace std;
 
-struct Numbers {
-	int number;
-	string name;
-};
-
 int main() {
+	int a[100][100];
 	int n, m;
-	cin >> n;
-	Numbers nums[100];
-	for (int i = 0; i < n; ++i) {
-		string name;
-		int number;
-		cin >> number >> name;
-		nums[i].number = number;
-		nums[i].name = name;
+	cin >> n, m;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cin >> a[i][j];
+		}
 	}
-	cin >> m;
-	for (int i = 0; i < m; ++i) {
-		int number;
-		cin >> number;
-		bool fl = 0;
-		for (int j = 0; j < n; ++j) {
-			if (nums[j].number == number) {
-				cout << nums[j].name << endl;
-				fl = 1;
-				break;
-			}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cout << a[i][j] << ' ';
 		}
-		if (!fl) {
-			cout << "No such number\n";
-		}
+		cout << endl;
 	}
 }
